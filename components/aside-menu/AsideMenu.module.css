@@ -1,0 +1,44 @@
+/* Left Menu */
+
+
+.container {
+  position: absolute;
+  width: 96px;
+  left: 0px;
+  top: 31px;
+  bottom: 31px;
+  padding: 20px;
+  background: #ffff;
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 16px 16px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 140px;
+}
+
+.midleMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  border-top: 1px solid #CCCCCC;
+  padding-top: 30px;
+  /* height: 70px; */
+}
+
+.bottonMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  bottom: 20px;
+}
