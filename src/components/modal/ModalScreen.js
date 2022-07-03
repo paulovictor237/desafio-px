@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import styles from './ModalScreen.module.css';
+import styles from './ModalScreen.module.scss';
 
 Modal.setAppElement('#__next');
 // Modal.setAppElement('#root');
@@ -14,7 +14,6 @@ export default function ModalScreen({ children, modalIsOpen, setModalIsOpen, nam
   function closeModal() {
     setModalIsOpen(false);
   }
-
 
   return (
     <div className={styles.container}>

@@ -2,7 +2,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
 import React, { Fragment, useEffect, useState } from 'react';
 import AddSaldoApp from '../adicionar-saldo/AddSaldoApp';
-import styles from './Table.module.css';
+import styles from './Table.module.scss';
 
 export default function Table() {
   const [data, setData] = useState([]);
@@ -35,43 +35,42 @@ export default function Table() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   return (
-    <div className={styles.container}>
+    <>
+      <AddSaldoApp
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
+      />
+      <div className={styles.container}>
 
-      <div className={styles['top-itens']}>
-        <div className={styles.pesquisa}>
-          <input
-            className={styles.input}
-            type="text"
-            placeholder="Pesquisar"
-          />
-          <input
-            className={styles.input}
-            type="text"
-            placeholder="Pesquisar Data"
-          />
+        <div className={styles['top-itens']}>
+          <div className={styles.pesquisa}>
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="Pesquisar"
+            />
+            <input
+              className={styles.input}
+              type='date'
+              placeholder="Pesquisar Data"
+            />
+          </div>
+
+          <button onClick={() => { setModalIsOpen(true) }}>
+            Adicionar Saldo
+          </button>
         </div>
-        <button onClick={() => { setModalIsOpen(true) }}>
-          Adicionar Saldo
-        </button>
 
-        <AddSaldoApp
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-        />
-
+        <span className={styles.table}>
+          <DataGrid
+            rows={rows}
+            columns={colums}
+            pageSize={10}
+            rowsPerPageOptions={[10, 20, 30]}
+          />
+        </span>
 
       </div>
-
-      <span className={styles.table}>
-        <DataGrid
-          rows={rows}
-          columns={colums}
-          pageSize={10}
-          rowsPerPageOptions={[10, 20, 30]}
-        />
-      </span>
-
-
-    </div>
+    </>
   )
 }

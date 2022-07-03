@@ -2,7 +2,8 @@ import Image from 'next/image';
 import React, { useRef } from 'react';
 import NumberFormat from 'react-number-format';
 import ModalScreen from '../modal/ModalScreen';
-import styles from './PixEnviado.module.css';
+import styles from './AddSaldoApp.module.scss';
+import classes from './PixEnviado.module.scss';
 
 export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setStep }) {
   function closeModal() {
@@ -16,7 +17,7 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setS
         modalIsOpen={modalIsOpen}
         setModalIsOpen={setModalIsOpen}
       >
-        <span className={styles.closeButton} onClick={closeModal}>
+        <span className={classes.closeButton} onClick={closeModal}>
           <Image className={styles.Image} width={50} height={50} src="/assets/icon-park-outline_close-small.svg" alt="outline_menu" />
         </span>
 

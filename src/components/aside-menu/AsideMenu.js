@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import styles from './AsideMenu.module.css'
+import styles from './AsideMenu.module.scss'
 
 export default function AsideMenu() {
   return (

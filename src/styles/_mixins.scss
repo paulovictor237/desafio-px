@@ -1,0 +1,21 @@
+@mixin desktop() {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin desktopFonts() {
+  @media (max-width: 1080px) {
+    html {
+      // font-size: 93.75%; //16 x 93.75 = 15
+    }
+  }
+}
+
+@mixin mobileFonts() {
+  @media (max-width: 720px) {
+    html {
+      // font-size: 87.5%; //16 x 87.5 = 14
+    }
+  }
+}

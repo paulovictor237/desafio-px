@@ -1,0 +1,57 @@
+.container {
+  padding: 40px;
+  gap: 40px;
+
+  position: absolute;
+  width: 85%;
+  height: 800px;
+
+  right: 20px;
+  top: 206px;
+  background: var(--whiteBackgound);
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.top-itens {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .pesquisa {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    input {
+      box-sizing: border-box;
+
+      padding: 8px 16px;
+      width: 240px;
+      height: 48px;
+
+      border: 1px solid var(--contornos);
+      border-radius: 8px;
+
+    }
+  }
+
+  button {
+    padding: 8px 16px;
+    height: 48px;
+    width: 170px;
+
+    right: 0px;
+    top: 0px;
+
+    // order: 2;
+  }
+}
+
+.table {
+  /* position: absolute; */
+  top: 20px;
+  height: 900px;
+  padding: 30px;
+}

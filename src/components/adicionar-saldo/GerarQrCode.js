@@ -2,7 +2,10 @@ import Image from 'next/image';
 import React, { useRef } from 'react';
 import NumberFormat from 'react-number-format';
 import ModalScreen from '../modal/ModalScreen';
-import styles from './GerarQrCode.module.css';
+import styles from './AddSaldoApp.module.scss';
+import classes from './GerarQrCode.module.scss';
+
+
 
 export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setStep }) {
   return (
@@ -13,14 +16,14 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setS
         setModalIsOpen={setModalIsOpen}
       >
         <h1>QRCode Gerado !</h1>
-        <Image className={styles.Image} width={253} height={253} src="/assets/image 1.svg" alt="outline_menu" />
+        <Image className={classes.Image} width={253} height={253} src="/assets/image 1.svg" alt="outline_menu" />
 
-        <div className={styles['pix-gerar-qr-code']}>
+        <div className={classes['pix-gerar-qr-code']}>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit rem facilis minus est praesentium.
           </p>
           <button>
-            <Image className={styles.Image} width={22} height={22} src="/assets/icon-park-outline_copy.svg" alt="outline_menu" />
+            <Image className={classes.Image} width={22} height={22} src="/assets/icon-park-outline_copy.svg" alt="outline_menu" />
           </button>
 
         </div>

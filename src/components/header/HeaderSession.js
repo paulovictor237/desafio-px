@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './HeaderSession.module.css'
+import styles from './HeaderSession.module.scss'
 
 export default function HeaderSession() {
   return (
@@ -11,7 +11,9 @@ export default function HeaderSession() {
           <span className={styles.disponivel}> R$ 35.500,00</span>
         </h1>
         <div className={styles.cardInfo}>
-          <p>Aprovisionado: R$ 99.700,00</p>
+          <p>Aprovisionado:
+            <strong> R$ 99.700,00</strong>
+          </p>
           <p className={styles.pedente}>
             Dias Pendentes:
             <strong> R$ 35.00,00</strong>

@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import NumberFormat from 'react-number-format';
 import ModalScreen from '../modal/ModalScreen';
-import styles from './AdicionarSaldo.module.css';
+import styles from './AddSaldoApp.module.scss';
+import classes from './AdicionarSaldo.module.scss';
 
 export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setStep }) {
   const titleInputRef = useRef();
@@ -35,7 +36,7 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setS
         setModalIsOpen={setModalIsOpen}
       >
 
-        <form className={styles.form} onSubmit={submitHandler}>
+        <form className={classes.form} onSubmit={submitHandler}>
           <div className={styles.control}>
             <label htmlFor="cars">Forma de pagamento:</label>
             <select id="cars">

@@ -1,0 +1,47 @@
+.control {
+
+  // margin-bottom: 0.5rem;
+  label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: #757575;
+  }
+
+  input,
+  select,
+  textarea {
+    box-sizing: border-box;
+    padding: 8px 16px;
+    width: 423px;
+    height: 48px;
+    border: 1px solid var(--contornos);
+    border-radius: 8px;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+
+  margin-bottom: 20px;
+
+  button {
+    width: 256px;
+    height: 68px;
+    border-radius: 8px;
+  }
+
+  .voltar {
+    background: var(--whiteBackgound);
+    color: var(--orange);
+    border: 1px solid var(--orange);
+
+    &:hover {
+      background: var(--orangehover);
+      color: var(--whiteBackgound);
+      border: none
+    }
+  }
+}

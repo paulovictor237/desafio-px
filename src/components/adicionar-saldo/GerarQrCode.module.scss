@@ -1,0 +1,26 @@
+.pix-gerar-qr-code {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    background: #EEEEEE;
+    width: 311.92px;
+    height: 76px;
+    left: calc(50% - 311.92px/2 - 35.04px);
+    top: calc(50% - 76px/2 + 140px);
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  button {
+    width: 70.08px;
+    height: 76px;
+    left: calc(50% - 70.08px/2 + 155.96px);
+    top: calc(50% - 76px/2 + 140px);
+
+    border-radius: 0px 4px 4px 0px;
+    border: none;
+  }
+}

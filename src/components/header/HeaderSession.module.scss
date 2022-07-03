@@ -1,0 +1,55 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: absolute;
+
+  top: 90px;
+  right: 0;
+  width: 32rem;
+  padding: 16px;
+  margin-right: 20px;
+
+  background: var(--whiteBackgound);
+
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  h1 {
+    font-weight: 700;
+    font-size: 28px;
+    text-align: right;
+    color: var(--fontBlack);
+  }
+}
+
+.title {
+  position: absolute;
+
+  width: 138px;
+  height: 48px;
+  left: 173px;
+  top: 95px;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+
+  color: var(--fontBlack);
+}
+
+.cardInfo {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  justify-content: space-between;
+}
+
+.pedente {
+  color: var(--red);
+}
+
+.disponivel {
+  color: var(--green);
+}
