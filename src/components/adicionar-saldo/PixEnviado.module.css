@@ -1,3 +1,66 @@
+/* Dropdown Menu Single */
+
+
+.closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.pix-gerar-qr-code {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.pix-gerar-qr-code p {
+  width: 311.92px;
+  height: 76px;
+  left: calc(50% - 311.92px/2 - 35.04px);
+  top: calc(50% - 76px/2 + 140px);
+
+  background: #EEEEEE;
+  border-radius: 4px 0px 0px 4px;
+  padding: 10px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.pix-gerar-qr-code button {
+  width: 70.08px;
+  height: 76px;
+  left: calc(50% - 70.08px/2 + 155.96px);
+  top: calc(50% - 76px/2 + 140px);
+  background: #FF7E2E;
+  border-radius: 0px 4px 4px 0px;
+  border: none;
+}
+
+
+.asdinput {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 24px;
+  isolation: isolate;
+
+  width: 423px;
+  height: 48px;
+
+  border: 1px solid #CBCBCB;
+  border-radius: 8px;
+  align-self: stretch;
+}
+
 .form {
   padding: 1rem;
   display: flex;
@@ -47,6 +110,10 @@
   border: 1px solid #CBCBCB;
   border-radius: 8px;
   align-self: stretch;
+
+  font-size: 16px;
+  color: #CCCCCC;
+
 }
 
 .actions {
@@ -62,7 +129,8 @@
 
 .actions button {
   /* position: absolute; */
-  width: 256px;
+  /* width: 256px; */
+  width: 563px;
   height: 68px;
   /* left: 434px;
   top: 659px; */

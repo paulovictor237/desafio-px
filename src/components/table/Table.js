@@ -1,7 +1,7 @@
 import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
 import React, { Fragment, useEffect, useState } from 'react';
-import AdicionarSaldo from '../adicionar-saldo/AdicionarSaldo';
+import AddSaldoApp from '../adicionar-saldo/AddSaldoApp';
 import styles from './Table.module.css';
 
 export default function Table() {
@@ -54,7 +54,7 @@ export default function Table() {
           Adicionar Saldo
         </button>
 
-        <AdicionarSaldo
+        <AddSaldoApp
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
         />

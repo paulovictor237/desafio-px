@@ -5,7 +5,7 @@ import styles from './ModalScreen.module.css';
 Modal.setAppElement('#__next');
 // Modal.setAppElement('#root');
 
-export default function ModalScreen({ children, modalIsOpen, setModalIsOpen, name }) {
+export default function ModalScreen({ children, modalIsOpen, setModalIsOpen, name, ...props }) {
 
   function openModal() {
     setModalIsOpen(true);
@@ -24,6 +24,7 @@ export default function ModalScreen({ children, modalIsOpen, setModalIsOpen, nam
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Example Modal"
+        {...props}
       >
         <span className={styles['modal-title']}>{name}</span>
         {children}

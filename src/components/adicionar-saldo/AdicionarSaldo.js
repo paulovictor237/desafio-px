@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
+import NumberFormat from 'react-number-format';
 import ModalScreen from '../modal/ModalScreen';
 import styles from './AdicionarSaldo.module.css';
 
-export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen }) {
+export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setStep }) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
@@ -25,6 +26,7 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen }) {
 
     props.onAddMeetup(meetupData);
   }
+
   return (
     <>
       <ModalScreen
@@ -43,28 +45,36 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen }) {
           </div>
           <div className={styles.control}>
             <label htmlFor='title'>Valor</label>
-            <input
-              placeholder=""
-              type='text' required id='title' ref={titleInputRef} />
+            {/* <input type='text' required id='title' ref={titleInputRef} /> */}
+            <NumberFormat
+              type='text' required id='title'
+              ref={titleInputRef}
+              // onValueChange={values => {
+              //   onChange({
+              //     target: {
+              //       value: values.value,
+              //     },
+              //   });
+              // }}
+              thousandSeparator="."
+              decimalSeparator=","
+              allowNegative={false}
+              prefix="R$ "
+            />
           </div>
-          <div className={styles.actions}>
-            <button>Add Meetup</button>
-          </div>
-
         </form>
-
-        <strong>
-          {new Intl.NumberFormat('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-          }).format(4500)}
-
-
-        </strong>
-
-        <button onClick={() => { setModalIsOpen(false) }}>close</button>
+        <div className={styles.actions}>
+          <button
+            onClick={() => { setModalIsOpen(false) }}
+            className={styles.voltar}>
+            Voltar
+          </button>
+          <button onClick={() => { setStep(2) }}
+          >Gerar QRCode</button>
+        </div>
       </ModalScreen>
     </>
 
   )
 }
+
