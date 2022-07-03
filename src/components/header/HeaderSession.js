@@ -4,10 +4,10 @@ import styles from './HeaderSession.module.css'
 export default function HeaderSession() {
   return (
     <>
-      <h1 className={styles.title}>Cédito</h1>
+      <h1 className={styles.title}>Crédito</h1>
 
       <div className={styles.card}>
-        <h1>Salto disponivel:
+        <h1>Saldo disponivel:
           <span className={styles.disponivel}> R$ 35.500,00</span>
         </h1>
         <div className={styles.cardInfo}>

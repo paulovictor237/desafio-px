@@ -19,10 +19,12 @@
   flex-direction: column;
   justify-content: center;
 
+  width: 507px;
   padding: 16px;
   margin-right: 20px;
   right: 0;
-  top: 75px;
+  top: 90px;
+
   background: #FFFFFF;
   box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.1);
   border-radius: 10px;

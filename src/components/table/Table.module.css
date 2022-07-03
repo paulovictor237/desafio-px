@@ -1,0 +1,79 @@
+.container {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  padding: 40px;
+  gap: 40px;
+
+  position: absolute;
+  width: 85%;
+  height: 800px;
+  /* left: 133px; */
+  right: 20px;
+  top: 206px;
+  background: #FFFFFF;
+
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.top-itens {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 40px;
+}
+
+.top-itens input {
+  box-sizing: border-box;
+  padding: 8px 16px;
+  width: 240px;
+  height: 48px;
+  border: 1px solid #CBCBCB;
+  border-radius: 8px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.pesquisa {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.top-itens button {
+  padding: 8px 16px;
+  gap: 10px;
+  height: 48px;
+  right: 0px;
+  top: 0px;
+  border: none;
+
+  /* Orange/O500 */
+
+  background: #FF7E2E;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #FAFAFA;
+
+}
+
+
+.table {
+  /* position: absolute; */
+  top: 20px;
+  height: 900px;
+  padding: 30px;
+}

@@ -30,3 +30,7 @@ a {
   --background: #f8f2f5;
   --shape: #FFFFFF;
 }
+
+button {
+  cursor: pointer;
+}
