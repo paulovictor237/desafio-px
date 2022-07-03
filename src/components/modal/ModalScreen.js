@@ -25,7 +25,6 @@ export default function ModalScreen({ children, modalIsOpen, setModalIsOpen, nam
         contentLabel="Example Modal"
         {...props}
       >
-        <span className={styles['modal-title']}>{name}</span>
         {children}
       </Modal>
     </div>

@@ -34,7 +34,7 @@ export default function Table({ data, tableHeader }) {
               <td>{row.conference}</td>
               <td>{row.division}</td>
               <td>{
-                <div className={styles.item} style={{ 'justify-content': 'flex-end' }}>
+                <div className={styles.item} style={{ justifyContent: 'flex-end' }}>
                   <Image
                     alt="icon-park-outline_copy"
                     src='/assets/icon-park-outline_copy_black.svg'

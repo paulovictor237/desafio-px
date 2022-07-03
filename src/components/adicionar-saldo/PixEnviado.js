@@ -12,21 +12,16 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setS
   }
   return (
     <>
-      <ModalScreen
-        name={''}
-        modalIsOpen={modalIsOpen}
-        setModalIsOpen={setModalIsOpen}
-      >
-        <span className={classes.closeButton} onClick={closeModal}>
-          <Image className={styles.Image} width={50} height={50} src="/assets/icon-park-outline_close-small.svg" alt="outline_menu" />
-        </span>
+      <span className={styles['modal-title']}>
 
+      </span>
 
-        <Image className={styles.Image} width={400} height={400} src="/assets/sign-up-okay 1.svg" alt="outline_menu" />
-        <h1>O PIX foi pago com sucesso!</h1>
+      <span className={classes.closeButton} onClick={closeModal}>
+        <Image className={styles.Image} width={50} height={50} src="/assets/icon-park-outline_close-small.svg" alt="outline_menu" />
+      </span>
 
-
-      </ModalScreen>
+      <Image className={styles.Image} width={400} height={400} src="/assets/sign-up-okay 1.svg" alt="outline_menu" />
+      <h1>O PIX foi pago com sucesso!</h1>
     </>
 
   )

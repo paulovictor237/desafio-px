@@ -10,33 +10,30 @@ import classes from './GerarQrCode.module.scss';
 export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setStep }) {
   return (
     <>
-      <ModalScreen
-        name={'Adicionar Saldo'}
-        modalIsOpen={modalIsOpen}
-        setModalIsOpen={setModalIsOpen}
-      >
-        <h1>QRCode Gerado !</h1>
-        <Image className={classes.Image} width={253} height={253} src="/assets/image 1.svg" alt="outline_menu" />
+      <span className={styles['modal-title']}>
+        QRCode
+      </span>
+      <h1>QRCode Gerado !</h1>
+      <Image className={classes.Image} width={253} height={253} src="/assets/image 1.svg" alt="outline_menu" />
 
-        <div className={classes['pix-gerar-qr-code']}>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit rem facilis minus est praesentium.
-          </p>
-          <button>
-            <Image className={classes.Image} width={22} height={22} src="/assets/icon-park-outline_copy.svg" alt="outline_menu" />
-          </button>
+      <div className={classes['pix-gerar-qr-code']}>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit rem facilis minus est praesentium.
+        </p>
+        <button>
+          <Image className={classes.Image} width={22} height={22} src="/assets/icon-park-outline_copy.svg" alt="outline_menu" />
+        </button>
 
-        </div>
+      </div>
 
-        <div className={styles.actions}>
-          <button
-            // onClick={() => { setModalIsOpen(false) }}
-            onClick={() => { setStep(3) }}
-          >
-            Fechar
-          </button>
-        </div>
-      </ModalScreen>
+      <div className={styles.actions}>
+        <button
+          // onClick={() => { setModalIsOpen(false) }}
+          onClick={() => { setStep(3) }}
+        >
+          Fechar
+        </button>
+      </div>
     </>
 
   )

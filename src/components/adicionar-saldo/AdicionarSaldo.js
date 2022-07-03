@@ -5,75 +5,68 @@ import styles from './AddSaldoApp.module.scss';
 import classes from './AdicionarSaldo.module.scss';
 
 export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setStep }) {
-  const titleInputRef = useRef();
-  const imageInputRef = useRef();
-  const addressInputRef = useRef();
-  const descriptionInputRef = useRef();
+  const formRef = useRef();
+  const paymentType = useRef();
+  const paymentValue = useRef();
 
   function submitHandler(event) {
+    setStep(2)
     event.preventDefault();
 
-    const enteredTitle = titleInputRef.current.value;
-    const enteredImage = imageInputRef.current.value;
-    const enteredAddress = addressInputRef.current.value;
-    const enteredDescription = descriptionInputRef.current.value;
+    const enteredPaymentType = paymentType.current.value;
+    const enteredValue = paymentValue.current.value;
 
-    const meetupData = {
-      title: enteredTitle,
-      image: enteredImage,
-      address: enteredAddress,
-      description: enteredDescription,
-    };
+    console.log(enteredPaymentType, enteredValue);
 
-    props.onAddMeetup(meetupData);
   }
 
   return (
     <>
-      <ModalScreen
-        name={'Adicionar Saldo'}
-        modalIsOpen={modalIsOpen}
-        setModalIsOpen={setModalIsOpen}
+      <span className={styles['modal-title']}>
+        Adicionar Saldo
+      </span>
+      <form
+        className={classes.form}
+        onSubmit={submitHandler}
+        id="myform" method="get"
+        ref={formRef}
       >
-
-        <form className={classes.form} onSubmit={submitHandler}>
-          <div className={styles.control}>
-            <label htmlFor="cars">Forma de pagamento:</label>
-            <select id="cars">
-              <option label="Pix">Pix</option>
-              <option label="Outros">Outros</option>
-            </select>
-          </div>
-          <div className={styles.control}>
-            <label htmlFor='title'>Valor</label>
-            {/* <input type='text' required id='title' ref={titleInputRef} /> */}
-            <NumberFormat
-              type='text' required id='title'
-              ref={titleInputRef}
-              // onValueChange={values => {
-              //   onChange({
-              //     target: {
-              //       value: values.value,
-              //     },
-              //   });
-              // }}
-              thousandSeparator="."
-              decimalSeparator=","
-              allowNegative={false}
-              prefix="R$ "
-            />
-          </div>
-        </form>
-        <div className={styles.actions}>
-          <button
-            onClick={() => { setModalIsOpen(false) }}
-            className={styles.voltar}>
-            Voltar
-          </button>
-          <button onClick={() => { setStep(2) }}
-          >Gerar QRCode</button>
+        <div className={styles.control}>
+          <label htmlFor="payment">Forma de pagamento:</label>
+          <select id="payment" ref={paymentType}>
+            <option label="Pix">Pix</option>
+            <option label="Outros">Outros</option>
+          </select>
         </div>
-      </ModalScreen>
+        <div className={styles.control}>
+          <label htmlFor='value'>Valor</label>
+          {/* <input type='text' required id='title' ref={titleInputRef} /> */}
+          <NumberFormat
+            type='text' required id='value'
+            ref={paymentValue}
+            onValueChange={(values) => {
+              const { formattedValue, value, floatValue } = values;
+              paymentValue.current.value = floatValue
+            }}
+            thousandSeparator="."
+            decimalSeparator=","
+            allowNegative={false}
+            prefix="R$ "
+          />
+        </div>
+      </form>
+      <div className={styles.actions}>
+        <button
+          onClick={() => { setModalIsOpen(false) }}
+          className={styles.voltar}>
+          Voltar
+        </button>
+
+        <button type="submit" form="myform" value="Update">
+          Gerar QRCode
+        </button>
+
+      </div>
     </>
 
   )

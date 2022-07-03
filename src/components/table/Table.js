@@ -30,7 +30,7 @@ export default function Table() {
             </div>
           </div>
 
-          <button style={{ backgroundColor: '#00A8FF' }}
+          <button
             onClick={() => { setModalIsOpen(true) }}>
             Adicionar Saldo
           </button>
