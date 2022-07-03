@@ -8,6 +8,7 @@ import classes from './GerarQrCode.module.scss';
 
 
 export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setStep }) {
+  const pixCodec = useRef(null);
   return (
     <>
       <span className={styles['modal-title']}>
@@ -17,10 +18,16 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setS
       <Image className={classes.Image} width={253} height={253} src="/assets/image 1.svg" alt="outline_menu" />
 
       <div className={classes['pix-gerar-qr-code']}>
-        <p>
+        <p ref={pixCodec}>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit rem facilis minus est praesentium.
         </p>
-        <button>
+        <button onClick={
+          () => {
+            console.log(pixCodec.current.innerText);
+            const pixCopy = (pixCodec.current.innerText);
+            navigator.clipboard.writeText(pixCopy);
+          }
+        }>
           <Image className={classes.Image} width={22} height={22} src="/assets/icon-park-outline_copy.svg" alt="outline_menu" />
         </button>
 
@@ -29,7 +36,7 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setS
       <div className={styles.actions}>
         <button
           // onClick={() => { setModalIsOpen(false) }}
-          onClick={() => { setStep(3) }}
+          onClick={() => setStep(3)}
         >
           Fechar
         </button>

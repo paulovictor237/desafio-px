@@ -1,22 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './HeaderSession.module.scss'
 
 export default function HeaderSession() {
+  const [aprovisionado, setAprovisionado] = useState(99700)
+  const [disponivel, setDisponivel] = useState(35500)
+  const [pendente, setpendente] = useState(35000)
+
+  const converterValor = (valor) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(valor)
+  }
+
   return (
     <>
       <h1 className={styles.title}>Crédito</h1>
 
       <div className={styles.card}>
-        <h1>Saldo disponivel:
-          <span className={styles.disponivel}> R$ 35.500,00</span>
+        <h1>Saldo disponive:{' '}
+          <strong className={styles.disponivel}>
+            {converterValor(disponivel)}
+          </strong>
         </h1>
         <div className={styles.cardInfo}>
-          <p>Aprovisionado:
-            <strong> R$ 99.700,00</strong>
+          <p>Aprovisionado:{' '}
+            <strong> {converterValor(aprovisionado)}</strong>
           </p>
           <p className={styles.pedente}>
-            Dias Pendentes:
-            <strong> R$ 35.00,00</strong>
+            Dias Pendentes:{' '}
+            <strong>{converterValor(pendente)}</strong>
           </p>
         </div>
       </div>
