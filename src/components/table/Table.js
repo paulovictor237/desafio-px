@@ -1,37 +1,13 @@
 import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
+import Image from 'next/image';
 import React, { Fragment, useEffect, useState } from 'react';
 import AddSaldoApp from '../adicionar-saldo/AddSaldoApp';
+import TabelaData from './TabelaData';
 import styles from './Table.module.scss';
+import TableGenerator from './TableGenerator';
 
 export default function Table() {
-  const [data, setData] = useState([]);
-  const getNBATeamData = async () => {
-    const response = await axios.get('https://www.balldontlie.io/api/v1/teams');
-    const data = await response.data.data;
-    setData(data);
-  };
-
-  useEffect(() => {
-    getNBATeamData();
-  }, []);
-
-  const colums = [
-    { field: "id", headerName: "ID", width: 90 },
-    { field: "city", headerName: "city", width: 150 },
-    { field: "abbreviation", headerName: "Abbreviations", width: 150 },
-    { field: "conference", headerName: "Conferehce", width: 150 },
-    { field: "division", headerName: "division", width: 150 },
-  ]
-
-  const rows = data.map(row => ({
-    id: row.id,
-    abbreviation: row.abbreviation,
-    city: row.city,
-    conference: row.conference,
-    division: row.division
-  }))
-
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   return (
@@ -44,31 +20,43 @@ export default function Table() {
 
         <div className={styles['top-itens']}>
           <div className={styles.pesquisa}>
-            <input
-              className={styles.input}
-              type="text"
-              placeholder="Pesquisar"
-            />
-            <input
-              className={styles.input}
-              type='date'
-              placeholder="Pesquisar Data"
-            />
+            <div className={styles.inputSearch}>
+              <input type="text" placeholder="Pesquisar" />
+              <Image className={styles.Image} width={35} height={35} src="/assets/icon-park-outline_search.svg" alt="outline_menu" />
+            </div>
+            <div className={styles.inputSearch}>
+              <input type='text' placeholder="Pesquisar Data" />
+              <Image className={styles.Image} width={35} height={35} src="/assets/akar-icons_calendar.svg" alt="outline_menu" />
+            </div>
           </div>
 
-          <button onClick={() => { setModalIsOpen(true) }}>
+          <button style={{ backgroundColor: '#00A8FF' }}
+            onClick={() => { setModalIsOpen(true) }}>
             Adicionar Saldo
           </button>
         </div>
 
-        <span className={styles.table}>
-          <DataGrid
-            rows={rows}
-            columns={colums}
-            pageSize={10}
-            rowsPerPageOptions={[10, 20, 30]}
+        {/* <TableGenerator /> */}
+        <TabelaData />
+
+        <div className={styles.pages}>
+          <Image
+            alt="Pagination-Left"
+            src='/assets/Pagination-Left.svg'
+            width={35}
+            height={35}
+            objectFit="cover"
           />
-        </span>
+          <button className={styles.selected}>01</button>
+          <button>02</button>
+          <Image
+            alt="Pagination-Right"
+            src='/assets/Pagination-Right.svg'
+            width={35}
+            height={35}
+            objectFit="cover"
+          />
+        </div>
 
       </div>
     </>

@@ -1,0 +1,44 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 13px;
+}
+
+.table {
+  top: 30px;
+  position: relative;
+  color: #424242;
+
+  table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    font-weight: 400;
+
+    thead {
+      tr {
+        th {
+          padding: .625em;
+          font-weight: 400;
+          border-bottom: 1px solid var(--orange);
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid var(--contornos);
+        padding: .35em;
+
+        td {
+          padding: .625em;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
