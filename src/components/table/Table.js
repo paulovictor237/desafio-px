@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useCustomRootData } from '../../hooks/useCustomRootData';
 import AddSaldoApp from '../adicionar-saldo/AddSaldoApp';
 import TabelaData from './TabelaData';
@@ -7,10 +7,14 @@ import styles from './Table.module.scss';
 
 export default function Table() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
   const { tableData, setTableData } = useCustomRootData()
 
-  const pages = tableData.data.length / tableData.step;
+  const [pages, setPages] = useState([])
+
+  useEffect(() => {
+    setPages(Array.from({ length: tableData.maxPages + 1 }, (_, i) => i + 1));
+  }, [tableData.maxPages])
+
 
   return (
     <>
@@ -49,9 +53,16 @@ export default function Table() {
             objectFit="cover"
             onClick={() => setTableData({ type: 'decrement' })}
           />
-          <button className={styles.selected}>01</button>
-          <button>02</button>
 
+          {pages.map(page => (
+            <button
+              className={page === tableData.page + 1 && styles.selected}
+              onClick={() => setTableData({ type: 'jumpToPage', page: (page - 1) })}
+              key={page}
+            >
+              {page < 10 ? '0' + page : page}
+            </button>
+          ))}
 
           <Image className={styles.Image}
             alt="Pagination-Right"

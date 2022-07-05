@@ -75,12 +75,13 @@
 
   position: absolute;
   bottom: 10px;
+  right: 10px;
 
   .Image {
     cursor: pointer;
 
     &:hover {
-      background: #1F4883A0;
+      background: #6ca9ffa0;
     }
 
     border-radius: 20px;
@@ -95,7 +96,8 @@
     background: white;
 
     &:hover {
-      background: #446086;
+      color: white;
+      background: #6ca9ffa0;
     }
 
     &.selected {
@@ -103,7 +105,8 @@
       background: #1F4883;
 
       &:hover {
-        background: #446086;
+        color: white;
+        background: #6ca9ffa0;
       }
     }
   }

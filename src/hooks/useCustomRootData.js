@@ -9,29 +9,44 @@ const CreateData = () => {
   const [tableData, setTableData] = useReducer((state, action) => {
     const currentStep = state.step;
     const currentPage = state.page;
-    let nextPage
+    const nextPage = state.page + 1
+    const previous = state.page - 1;
     let nextSlice
     switch (action.type) {
       case 'insert':
         return {
           ...state,
-          data: action.data.slice(0, 4),
-          fullData: action.data
+          data: action.data.slice(0, state.step),
+          fullData: action.data,
+          maxPages: (action.data.length / state.step)
         };
       case 'increment':
-        if (state.page * state.step > state.fullData.length) return ({ ...state })
-        nextPage = state.page + 1;
-        nextSlice = state.fullData.slice(currentPage * currentStep, nextPage * currentStep)
+        if (nextPage > state.maxPages) return ({ ...state })
+        nextSlice = state.fullData.slice(
+          nextPage * currentStep,
+          (nextPage + 1) * currentStep
+        )
         return { ...state, page: nextPage, data: nextSlice };
       case 'decrement':
-        if (state.page * state.step < 1) return ({ ...state })
-        nextPage = state.page - 1;
-        nextSlice = state.fullData.slice(nextPage * currentStep, currentPage * currentStep)
-        return { ...state, page: nextPage, data: nextSlice };
+        if (previous < 0) return ({ ...state })
+        nextSlice = state.fullData.slice(
+          previous * currentStep,
+          currentPage * currentStep
+        )
+        return { ...state, page: previous, data: nextSlice };
+
+      case 'jumpToPage':
+        if (action.page > state.maxPages || action.page < 0) return ({ ...state })
+        nextSlice = state.fullData.slice(
+          action.page * currentStep,
+          (action.page + 1) * currentStep
+        )
+        return { ...state, page: action.page, data: nextSlice };
+
       default:
         throw new Error();
     }
-  }, { data: [], fullData: [], page: 1, step: 4 });
+  }, { data: [], fullData: [], page: 0, step: 4, maxPages: 0 });
 
   const getNBATeamData = async () => {
     const response = await axios.get('https://www.balldontlie.io/api/v1/teams');
