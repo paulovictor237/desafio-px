@@ -1,14 +1,16 @@
-import { DataGrid } from '@mui/x-data-grid';
-import axios from 'axios';
 import Image from 'next/image';
-import React, { Fragment, useEffect, useReducer, useState } from 'react';
+import React, { useState } from 'react';
+import { useCustomRootData } from '../../hooks/useCustomRootData';
 import AddSaldoApp from '../adicionar-saldo/AddSaldoApp';
 import TabelaData from './TabelaData';
 import styles from './Table.module.scss';
-import TableGenerator from './TableGenerator';
 
 export default function Table() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const { tableData, setTableData } = useCustomRootData()
+
+  const pages = tableData.data.length / tableData.step;
 
   return (
     <>
@@ -39,21 +41,25 @@ export default function Table() {
         <TabelaData />
 
         <div className={styles.pages}>
-          <Image
+          <Image className={styles.Image}
             alt="Pagination-Left"
             src='/assets/Pagination-Left.svg'
             width={35}
             height={35}
             objectFit="cover"
+            onClick={() => setTableData({ type: 'decrement' })}
           />
           <button className={styles.selected}>01</button>
           <button>02</button>
-          <Image
+
+
+          <Image className={styles.Image}
             alt="Pagination-Right"
             src='/assets/Pagination-Right.svg'
             width={35}
             height={35}
             objectFit="cover"
+            onClick={() => setTableData({ type: 'increment' })}
           />
         </div>
 

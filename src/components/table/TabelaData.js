@@ -5,12 +5,11 @@ import TabelaGenetaor from './TableGenerator';
 
 export default function Table() {
 
-  const { hello, tableData, tableHeader } = useCustomRootData()
-  // console.log(hello)
+  const { tableHeader, tableData } = useCustomRootData()
 
   return (
     <TabelaGenetaor
-      data={tableData}
+      data={tableData.data}
       tableHeader={tableHeader}
     />
   )

@@ -76,6 +76,16 @@
   position: absolute;
   bottom: 10px;
 
+  .Image {
+    cursor: pointer;
+
+    &:hover {
+      background: #1F4883A0;
+    }
+
+    border-radius: 20px;
+  }
+
   button {
     width: 48px;
     height: 56px;
