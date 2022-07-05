@@ -29,9 +29,9 @@ yarn dev # iniciar versao de desenvolvimento
 - [X] Gerar um QR Code verdadeiro com biblioteca tercerizada + custom hook.
 - [X] Usar o Hook useContext para gerar os dados da tabela fora do componente.
 - [ ] Atribuir a ação aos botões de avançar e voltar as páginas da tabela.
-- [ ] Incrementar saldo adicionado no modal para o saldo disponível.
 - [ ] Aplicar uma tag para a coluna da região da tabela.
 - [ ] Filtrar tabela com o botão de pesquisar.
 - [ ] Ordenar tabela para cada coluna de dados.
+- [ ] Incrementar saldo adicionado no modal para o saldo disponível.
 - [ ] Guardar informações em cache no navegador.
 - [ ] Criar versão mobile e responsiva da interface.

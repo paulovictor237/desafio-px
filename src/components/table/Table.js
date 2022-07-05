@@ -1,7 +1,7 @@
 import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
 import Image from 'next/image';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useReducer, useState } from 'react';
 import AddSaldoApp from '../adicionar-saldo/AddSaldoApp';
 import TabelaData from './TabelaData';
 import styles from './Table.module.scss';
@@ -36,7 +36,6 @@ export default function Table() {
           </button>
         </div>
 
-        {/* <TableGenerator /> */}
         <TabelaData />
 
         <div className={styles.pages}>
