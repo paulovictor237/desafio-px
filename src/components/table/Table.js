@@ -25,14 +25,14 @@ export default function Table() {
               <Image className={styles.Image} width={35} height={35} src="/assets/icon-park-outline_search.svg" alt="outline_menu" />
             </div>
             <div className={styles.inputSearch}>
-              <input type='text' placeholder="Pesquisar Data" />
+              <input type='text' placeholder="Pesquisar data" />
               <Image className={styles.Image} width={35} height={35} src="/assets/akar-icons_calendar.svg" alt="outline_menu" />
             </div>
           </div>
 
           <button
             onClick={() => { setModalIsOpen(true) }}>
-            Adicionar Saldo
+            Adicionar saldo
           </button>
         </div>
 

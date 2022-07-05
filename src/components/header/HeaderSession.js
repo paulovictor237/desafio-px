@@ -14,11 +14,11 @@ export default function HeaderSession() {
   }
 
   return (
-    <>
+    <header>
       <h1 className={styles.title}>Crédito</h1>
 
       <div className={styles.card}>
-        <h1>Saldo disponive:{' '}
+        <h1>Saldo disponível:{' '}
           <strong className={styles.disponivel}>
             {converterValor(disponivel)}
           </strong>
@@ -28,12 +28,12 @@ export default function HeaderSession() {
             <strong> {converterValor(aprovisionado)}</strong>
           </p>
           <p className={styles.pedente}>
-            Dias Pendentes:{' '}
+            Dias pendentes:{' '}
             <strong>{converterValor(pendente)}</strong>
           </p>
         </div>
       </div>
 
-    </>
+    </header>
   )
 }

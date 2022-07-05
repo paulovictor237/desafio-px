@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ModalScreen from '../modal/ModalScreen';
+import style from './AddSaldoApp.module.scss';
 import AdicionarSaldo from './AdicionarSaldo';
 import GerarQrCode from './GerarQrCode';
 import PixEnviado from './PixEnviado';
@@ -14,29 +15,31 @@ export default function AddSaldoApp({ modalIsOpen, setModalIsOpen }) {
   }, [modalIsOpen])
 
   return (
-    <ModalScreen
-      name={'Adicionar Saldo'}
-      modalIsOpen={modalIsOpen}
-      setModalIsOpen={setModalIsOpen}
-    >
-      {step === 1 && <AdicionarSaldo
+    <div className={style.container}>
+      <ModalScreen
+        name={'Adicionar Saldo'}
         modalIsOpen={modalIsOpen}
         setModalIsOpen={setModalIsOpen}
-        setStep={setStep}
-        step={step}
-      />}
-      {step === 2 && <GerarQrCode
-        modalIsOpen={modalIsOpen}
-        setModalIsOpen={setModalIsOpen}
-        setStep={setStep}
-        step={step}
-      />}
-      {step === 3 && <PixEnviado
-        modalIsOpen={modalIsOpen}
-        setModalIsOpen={setModalIsOpen}
-        setStep={setStep}
-        step={step}
-      />}
-    </ModalScreen>
+      >
+        {step === 1 && <AdicionarSaldo
+          modalIsOpen={modalIsOpen}
+          setModalIsOpen={setModalIsOpen}
+          setStep={setStep}
+          step={step}
+        />}
+        {step === 2 && <GerarQrCode
+          modalIsOpen={modalIsOpen}
+          setModalIsOpen={setModalIsOpen}
+          setStep={setStep}
+          step={step}
+        />}
+        {step === 3 && <PixEnviado
+          modalIsOpen={modalIsOpen}
+          setModalIsOpen={setModalIsOpen}
+          setStep={setStep}
+          step={step}
+        />}
+      </ModalScreen>
+    </div>
   )
 }

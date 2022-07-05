@@ -6,15 +6,16 @@
   position: absolute;
 
   top: 90px;
-  right: 0;
+  right: 20px;
   width: 32rem;
   padding: 16px;
-  margin-right: 20px;
+  // margin-right: 20px;
 
   background: var(--whiteBackgound);
 
   box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  color: var(--fontBlack);
 
   h1 {
     font-weight: 700;

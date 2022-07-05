@@ -6,7 +6,7 @@ export default function Table() {
   const [data, setData] = useState([]);
   const getNBATeamData = async () => {
     const response = await axios.get('https://www.balldontlie.io/api/v1/teams');
-    const data = await response.data.data.slice(1, 10);
+    const data = await response.data.data.slice(1, 5);
     setData(data);
   };
 

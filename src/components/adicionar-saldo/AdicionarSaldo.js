@@ -23,9 +23,9 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setS
   return (
     <>
       <span className={styles['modal-title']}>
-        Adicionar Saldo
+        Adicionar saldo
       </span>
-      <form
+      <form style={{ width: '70%' }}
         className={classes.form}
         onSubmit={submitHandler}
         id="myform" method="get"
@@ -39,7 +39,7 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setS
           </select>
         </div>
         <div className={styles.control}>
-          <label htmlFor='value'>Valor</label>
+          <label htmlFor='value'>Valor:</label>
           {/* <input type='text' required id='title' ref={titleInputRef} /> */}
           <NumberFormat
             type='text' required id='value'
@@ -52,6 +52,7 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setS
             decimalSeparator=","
             allowNegative={false}
             prefix="R$ "
+            className={styles.NumberFormat}
           />
         </div>
       </form>

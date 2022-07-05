@@ -11,7 +11,7 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setS
     setStep(1);
   }
   return (
-    <>
+    <div className={classes.container}>
       <span className={styles['modal-title']}>
 
       </span>
@@ -22,7 +22,7 @@ export default function AdicionarSaldo({ modalIsOpen, setModalIsOpen, step, setS
 
       <Image className={styles.Image} width={400} height={400} src="/assets/sign-up-okay 1.svg" alt="outline_menu" />
       <h1>O PIX foi pago com sucesso!</h1>
-    </>
+    </div>
 
   )
 }

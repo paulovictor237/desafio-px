@@ -8,6 +8,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+
+  h1 {
+    color: var(--fontBlack)
+  }
 
   p {
     background: #EEEEEE;
