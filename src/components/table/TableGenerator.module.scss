@@ -42,3 +42,23 @@
     }
   }
 }
+
+.tagColored {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+
+  width: 140px;
+  // height: 34px;
+
+  background: #FFEFC5;
+  // color: #B78811;
+  color: var(--fontBlack);
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+
+}

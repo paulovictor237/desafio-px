@@ -6,6 +6,26 @@ export default function Table({ data, tableHeader }) {
   // const entries = Object.entries(person);
   // const propertyNames = Object.keys(person);
   // const propertyValues = Object.values(person);
+
+  const switchColor = (color) => {
+    switch (color) {
+      case 'Southeast':
+        return '#8be9fd';
+      case 'Atlantic':
+        return '#50fa7b';
+      case 'Central':
+        return '#ffb86c';
+      case 'Northwest':
+        return '#ff79c6';
+      case 'Pacific':
+        return '#bd93f9'
+      case 'Southwest':
+        return '#ff5555';
+      default:
+        return '#f1fa8c';
+    }
+  }
+
   return (
     <span className={styles.table}>
       <table stylesheet={3500}>
@@ -32,7 +52,7 @@ export default function Table({ data, tableHeader }) {
               <td>{row.city}</td>
               <td>{row.abbreviation}</td>
               <td>{row.conference}</td>
-              <td>{row.division}</td>
+              <td> <div className={styles.tagColored} style={{ backgroundColor: switchColor(row.division) }}>{row.division}</div></td>
               <td>{
                 <div className={styles.item} style={{ justifyContent: 'flex-end' }}>
                   <Image
