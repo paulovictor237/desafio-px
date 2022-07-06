@@ -1,11 +1,11 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useCustomRootData } from '../../hooks/useCustomRootData';
 import styles from './TableGenerator.module.scss';
 
 export default function Table({ data, tableHeader }) {
-  // const entries = Object.entries(person);
-  // const propertyNames = Object.keys(person);
-  // const propertyValues = Object.values(person);
+  const { tableData, setTableData } = useCustomRootData();
 
   const switchColor = (color) => {
     switch (color) {
@@ -26,6 +26,15 @@ export default function Table({ data, tableHeader }) {
     }
   }
 
+  const [order, setOrder] = useState({ estado: true, modulo: '' });
+
+  const handlerSort = (a) => {
+    const changeOrder = order.modulo === a ? (!order.estado) : true;
+    setTableData({ type: 'sort', prop: a, order: changeOrder });
+    setOrder({ estado: changeOrder, modulo: a })
+    console.log(order)
+  }
+
   return (
     <span className={styles.table}>
       <table stylesheet={3500}>
@@ -35,11 +44,15 @@ export default function Table({ data, tableHeader }) {
               <th key={uuidv4()}>
                 <div className={styles.item}>
                   {a}
-                  {(i + 1 !== row.length) && <Image
-                    alt="Sort"
-                    src='/assets/Sort.svg'
-                    width={8} height={20} objectFit="cover"
-                  />}
+                  {(i + 1 !== row.length) &&
+                    <div className={styles.Image} onClick={() => handlerSort(a)}>
+                      <Image
+                        alt="Sort"
+                        src='/assets/Sort.svg'
+                        width={8} height={20} objectFit="cover"
+                      />
+                    </div>
+                  }
                 </div>
               </th>
             )}

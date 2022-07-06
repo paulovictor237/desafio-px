@@ -56,7 +56,7 @@ export default function Table() {
 
           {pages.map(page => (
             <button
-              className={page === tableData.page + 1 && styles.selected}
+              className={page === tableData.page + 1 ? styles.selected : ''}
               onClick={() => setTableData({ type: 'jumpToPage', page: (page - 1) })}
               key={page}
             >

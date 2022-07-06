@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { createContext, ReactNode, useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 
 // cria os dados do contexto
 const CreateData = () => {
-  const tableHeader = ['ID', 'City', 'Abbreviation', 'Conference', 'Division', '']
+  const tableHeader = ['id', 'city', 'abbreviation', 'conference', 'division', '']
 
   // const [tableData, setTableData] = useState([]);
   const [tableData, setTableData] = useReducer((state, action) => {
@@ -42,6 +42,20 @@ const CreateData = () => {
           (action.page + 1) * currentStep
         )
         return { ...state, page: action.page, data: nextSlice };
+
+      case 'sort':
+        let sortArray = state.fullData.sort((a, b) => {
+          if (a[action.prop] > b[action.prop]) return 1;
+          if (a[action.prop] < b[action.prop]) return -1;
+          return 0;
+        });
+        if (action.order === false) sortArray = sortArray.slice(0).reverse();
+        return {
+          ...state,
+          data: sortArray.slice(0, state.step),
+          fullData: sortArray,
+          page: 0
+        };
 
       default:
         throw new Error();

@@ -31,8 +31,9 @@ yarn dev # iniciar versao de desenvolvimento
 - [X] Usar o Hook useReducer para criar ações na tabela
 - [X] Atribuir a ação aos botões de avançar e voltar as páginas da tabela.
 - [X] Aplicar uma tag para a coluna da região da tabela.
-- [ ] Filtrar tabela com o botão de pesquisar.
-- [ ] Ordenar tabela para cada coluna de dados.
+- [X] Ordenar tabela para cada coluna de dados.
+- [X] Inverter tabela para cada coluna de dados.
 - [ ] Incrementar saldo adicionado no modal para o saldo disponível.
+- [ ] Filtrar tabela com o botão de pesquisar.
 - [ ] Guardar informações em cache no navegador.
 - [ ] Criar versão mobile e responsiva da interface.
