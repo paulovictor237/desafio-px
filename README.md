@@ -14,7 +14,7 @@ yarn dev # iniciar versao de desenvolvimento
 - [x] Para rodar o projeto utilizei o Linux no WSL2
 - [X] Criei o projeto com `yarn create-next-app`
 - [X] Construi a interface com css puro e sem o uso de bibliotecas prontas para exercitar a aprendizagem.
-- [X] Adaptei todo o projeto CSS para SASS pois acredito que essa biblioteca permite uma melhor organização visual do código.
+- [X] Adaptei todo o projeto CSS para SASS pois acredito que esse framework melhora a organização visual do código.
 - [X] Outra biblioteca que utilizei foi a react-modal para construir e gerenciar os estados do modal.
 - [X] Tive atenção na hora de construir o código e consertar bugs de performace.
 - [X] Header: Utilizei a biblioteca NumberFormat para gerar corretamente os valores em Real que são apresentados no saldo.
